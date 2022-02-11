@@ -43,8 +43,7 @@
 <script>
 // @ is an alias to /src
 import EventCard from '@/components/EventCard.vue';
-import EventService from '@/services/EventService.js';
-// import { watchEffect } from 'vue';
+import store from '@/store';
 
 export default {
   name: 'EventList',
@@ -52,11 +51,20 @@ export default {
   components: {
     EventCard,
   },
-  data() {
-    return {
-      events: null,
-      totalEvents: 0,
-    };
+  computed: {
+    events() {
+      return this.$store.state.events;
+    },
+    totalEvents() {
+      return this.$store.state.totalEvents;
+    },
+    totalPages() {
+      return Math.ceil(this.totalEvents / 2);
+    },
+    hasNextPage() {
+      var totalPages = Math.ceil(this.totalEvents / 2);
+      return this.page < totalPages;
+    },
   },
   // created() {
   //   watchEffect(() => {
@@ -72,35 +80,50 @@ export default {
   //   });
   // },
   beforeRouteEnter(routeTo, routeFrom, next) {
-    EventService.getEvents(2, parseInt(routeTo.query.page) || 1)
-      .then((response) => {
-        next((comp) => {
-          comp.events = response.data;
-          comp.totalEvents = response.headers['x-total-count'];
-        });
+    store
+      .dispatch('fetchEvents', {
+        perPage: 2,
+        page: parseInt(routeTo.query.page) || 1,
       })
+      .then(next)
       .catch(() => {
         next({ name: 'NetworkError' });
       });
+    // EventService.getEvents(2, parseInt(routeTo.query.page) || 1)
+    //   .then((response) => {
+    //     next((comp) => {
+    //       comp.$store.commit('SET_EVENTS', response.data);
+    //       comp.$store.commit(
+    //         'SET_TOTAL_EVENTS',
+    //         response.headers['x-total-count']
+    //       );
+    //     });
+    //   })
+    //   .catch(() => {
+    //     next({ name: 'NetworkError' });
+    //   });
   },
   beforeRouteUpdate(routeTo) {
-    return EventService.getEvents(2, parseInt(routeTo.query.page) || 1)
-      .then((response) => {
-        this.events = response.data;
-        this.totalEvents = response.headers['x-total-count'];
+    return this.$store
+      .dispatch('fetchEvents', {
+        perPage: 2,
+        page: parseInt(routeTo.query.page) || 1,
       })
       .catch(() => {
         return { name: 'NetworkError' };
       });
-  },
-  computed: {
-    totalPages() {
-      return Math.ceil(this.totalEvents / 2);
-    },
-    hasNextPage() {
-      var totalPages = Math.ceil(this.totalEvents / 2);
-      return this.page < totalPages;
-    },
+
+    // EventService.getEvents(2, parseInt(routeTo.query.page) || 1)
+    //   .then((response) => {
+    //     this.$store.commit('SET_EVENTS', response.data);
+    //     this.$store.commit(
+    //       'SET_TOTAL_EVENTS',
+    //       response.headers['x-total-count']
+    //     );
+    //   })
+    //   .catch(() => {
+    //     return { name: 'NetworkError' };
+    //   });
   },
 };
 </script>

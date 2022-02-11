@@ -1,70 +1,110 @@
 {
-    "events": [
-      {
-        "id": 123,
-        "category": "animal welfare",
-        "title": "Cat Adoption Day",
-        "description": "Find your new feline friend at this event.",
-        "location": "Meow Town",
-        "date": "January 28, 2022",
-        "time": "12:00",
-        "petsAllowed": true,
-        "organizer": "Kat Laydee"
-      },
-      {
-        "id": 456,
-        "category": "food",
-        "title": "Community Gardening",
-        "description": "Join us as we tend to the community edible plants.",
-        "location": "Flora City",
-        "date": "March 14, 2022",
-        "time": "10:00",
-        "petsAllowed": true,
-        "organizer": "Fern Pollin"
-      },
-      {
-        "id": 789,
-        "category": "sustainability",
-        "title": "Beach Cleanup",
-        "description": "Help pick up trash along the shore.",
-        "location": "Playa Del Carmen",
-        "date": "July 22, 2022",
-        "time": "11:00",
-        "petsAllowed": false,
-        "organizer": "Carey Wales"
-      },
-      {
-        "id": 1001,
-        "category": "animal welfare",
-        "title": "Dog Adoption Day",
-        "description": "Find your new canine friend at this event.",
-        "location": "Woof Town",
-        "date": "August 28, 2022",
-        "time": "12:00",
-        "petsAllowed": true,
-        "organizer": "Dawg Dahd"
-      },
-      {
-        "id": 1002,
-        "category": "food",
-        "title": "Canned Food Drive",
-        "description": "Bring your canned food to donate to those in need.",
-        "location": "Tin City",
-        "date": "September 14, 2022",
-        "time": "3:00",
-        "petsAllowed": true,
-        "organizer": "Kahn Opiner"
-      },
-      {
-        "id": 1003,
-        "category": "sustainability",
-        "title": "Highway Cleanup",
-        "description": "Help pick up trash along the highway.",
-        "location": "Highway 50",
-        "date": "July 22, 2022",
-        "time": "11:00",
-        "petsAllowed": false,
-        "organizer": "Brody Kill"
-      }
-    ]
-  }
+  "events": [
+    {
+      "id": 123,
+      "category": "animal welfare",
+      "title": "Cat Adoption Day",
+      "description": "Find your new feline friend at this event.",
+      "location": "Meow Town",
+      "date": "January 28, 2022",
+      "time": "12:00",
+      "petsAllowed": true,
+      "organizer": "Kat Laydee"
+    },
+    {
+      "id": 456,
+      "category": "food",
+      "title": "Community Gardening",
+      "description": "Join us as we tend to the community edible plants.",
+      "location": "Flora City",
+      "date": "March 14, 2022",
+      "time": "10:00",
+      "petsAllowed": true,
+      "organizer": "Fern Pollin"
+    },
+    {
+      "id": 789,
+      "category": "sustainability",
+      "title": "Beach Cleanup",
+      "description": "Help pick up trash along the shore.",
+      "location": "Playa Del Carmen",
+      "date": "July 22, 2022",
+      "time": "11:00",
+      "petsAllowed": false,
+      "organizer": "Carey Wales"
+    },
+    {
+      "id": 1001,
+      "category": "animal welfare",
+      "title": "Dog Adoption Day",
+      "description": "Find your new canine friend at this event.",
+      "location": "Woof Town",
+      "date": "August 28, 2022",
+      "time": "12:00",
+      "petsAllowed": true,
+      "organizer": "Dawg Dahd"
+    },
+    {
+      "id": 1002,
+      "category": "food",
+      "title": "Canned Food Drive",
+      "description": "Bring your canned food to donate to those in need.",
+      "location": "Tin City",
+      "date": "September 14, 2022",
+      "time": "3:00",
+      "petsAllowed": true,
+      "organizer": "Kahn Opiner"
+    },
+    {
+      "id": 1003,
+      "category": "sustainability",
+      "title": "Highway Cleanup",
+      "description": "Help pick up trash along the highway.",
+      "location": "Highway 50",
+      "date": "July 22, 2022",
+      "time": "11:00",
+      "petsAllowed": false,
+      "organizer": "Brody Kill"
+    },
+    {
+      "id": "aea35c09-c65f-483d-9d9e-b29aa358479e",
+      "category": "housing",
+      "title": "Meet Jean",
+      "description": "New House Event",
+      "location": "Tallinn",
+      "date": "10/12/2022",
+      "time": "10Am",
+      "organizer": "Adam Jahr"
+    },
+    {
+      "id": "8ba59034-aff3-4881-aaa7-78b4cac00934",
+      "category": "animal welfare",
+      "title": "Dogs",
+      "description": "Visit Dogs",
+      "location": "Portugal",
+      "date": "10/03/2022",
+      "time": "12AM",
+      "organizer": "Adam Jahr"
+    },
+    {
+      "id": "cca9fa9d-6f9f-49ec-8886-8bd7b75e5f55",
+      "category": "animal welfare",
+      "title": "Dogs 2",
+      "description": "Visit Dogs",
+      "location": "Portugal",
+      "date": "10/03/2022",
+      "time": "12AM",
+      "organizer": "Adam Jahr"
+    },
+    {
+      "id": "711f68f5-5a46-4078-bb8a-c3110a17481b",
+      "category": "food",
+      "title": "Buy Food",
+      "description": "Buy a lot of food",
+      "location": "Here",
+      "date": "Tomorrow",
+      "time": "Morning",
+      "organizer": "Adam Jahr"
+    }
+  ]
+}

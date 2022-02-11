@@ -4,12 +4,13 @@ import EventLayout from '@/views/event/Layout.vue';
 import EventDetails from '@/views/event/Details.vue';
 import EventRegister from '@/views/event/Register.vue';
 import EventEdit from '@/views/event/Edit.vue';
+import EventCreate from '@/views/EventCreate.vue';
 import About from '@/views/About.vue';
 import NotFound from '@/views/NotFound.vue';
 import NetworkError from '@/views/NetworkError.vue';
 import NProgress from 'nprogress';
-import EventService from '@/services/EventService.js';
-import GStore from '@/store';
+import GStore from '@/store/GStore';
+import store from '@/store';
 
 const routes = [
   {
@@ -24,20 +25,7 @@ const routes = [
     props: true,
     component: EventLayout,
     beforeEnter: (to) => {
-      return EventService.getEvent(to.params.id)
-        .then((response) => {
-          GStore.event = response.data;
-        })
-        .catch((error) => {
-          if (error.response && error.response.status == 404) {
-            return {
-              name: '404Resource',
-              params: { resource: 'event' },
-            };
-          } else {
-            return { name: 'NetworkError' };
-          }
-        });
+      return store.dispatch('fetchEvent', to.params.id);
     },
     children: [
       {
@@ -57,6 +45,11 @@ const routes = [
         meta: { requireAuth: true }, // automatically inherited to all the children
       },
     ],
+  },
+  {
+    path: '/events/create',
+    name: 'EventCreate',
+    component: EventCreate,
   },
   {
     path: '/event/:afterEvent(.*)',
